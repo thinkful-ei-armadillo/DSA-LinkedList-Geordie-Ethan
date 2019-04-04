@@ -146,57 +146,20 @@ const reverseList = function (list) {
   let previousNode = null;
   let currentNode  = list.head;
 
-  // from first to last node
-  while (currentNode.next !== null) {
+  // loop over every node
+  while (currentNode !== null) {
+
+    let nextNode = currentNode.next;
 
     currentNode.next = previousNode;
+
     previousNode = currentNode;
+    currentNode = nextNode;
   }
 
+  list.head = previousNode;
 
-  // each node should point to the one before it
-  // the first node should point to null
-  // the head should point to last node
-
-
-
-
-
-// --------------------
-
-
-  // let currentNode = list.head;
-  // let tempNode      = null;
-  // let tempNextValue = null;
-
-  // while (currentNode !== null && currentNode.next !== null) {
-
-  //   currentNode.next = tempNextValue;
-  //   tempNextValue = currentNode;
-
-  //   currentNode = currentNode.next;
-  // }
-
-  // // handle the last node in list here
-  // currentNode.next = tempNextValue;
-  // list.head = currentNode;
-
-
-
-
-  // First item
-    // next = null
-    // loop
-
-  // second item
-    // next to the node from the previous loop
-    // loop
-
-  // for last item (where item.next === null)
-    // next to the node from the previous loop
-    // list.head this current item
-
-
+  return list;
 };
 
 main();
