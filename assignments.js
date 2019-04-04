@@ -12,13 +12,15 @@ const main = function () {
 
   SLL.insertFirst('Tauhida');
 
-  // SLL.remove('squirrel');
+  SLL.remove('squirrel');
 
-  // SLL.insertBefore('xxxxxx', 'Helo');
+  SLL.insertBefore('Athena', 'Boomer');
 
-  // SLL.insertAfter('xxxxxx', 'Helo');
+  SLL.insertAfter('Hotdog', 'Helo');
 
-  SLL.insertAt('xxxxx', 6);
+  SLL.insertAt('Kat', 2);
+
+  SLL.remove('Tauhida');
 
   debug(SLL);
 };
