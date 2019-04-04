@@ -32,6 +32,11 @@ const main = function () {
 
   console.log(findPrevious(SLL, 'Athena'));
 
+
+  // Assignment #4
+  // The program removes all subsequent duplicate values
+  // O(n^2) Polynomial (Quadratic)
+
   debug(SLL);
 
 
