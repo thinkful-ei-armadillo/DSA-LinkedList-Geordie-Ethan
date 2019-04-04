@@ -103,20 +103,14 @@ class LinkedList {
 
     // known: list is not empty
 
-    while (currNodePosition !== targetPosition && currNode.next !== null) {
+    while (currNodePosition !== targetPosition && currNode !== null) {
       prevNode = currNode;
       currNode = currNode.next;
       currNodePosition++;
     }
 
-    // current pos is target pos OR currNode.next === null OR both
-
-    if (currNode.next === null && currNodePosition === targetPosition) {
-      // the last item is the target
-    }
-
     // targetPosition does not exist in list
-    if (currNode.next === null && currNodePosition !== targetPosition) {
+    if (currNode === null && currNodePosition !== targetPosition) {
       return null;
     }
 
