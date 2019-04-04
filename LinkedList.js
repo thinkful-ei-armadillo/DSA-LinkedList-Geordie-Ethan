@@ -63,7 +63,25 @@ class LinkedList {
     previousNode.next = newNode;
   }
 
-  insertAfter(newNodeValue, targetNodeValue) {}
+  insertAfter(newNodeValue, targetNodeValue) {
+
+    // if list empty
+    if (this.head === null) {
+      return null;
+    }
+
+    const targetNode = this.find(targetNodeValue);
+
+    if (targetNode === null) {
+      return null;
+    }
+
+    const nextNode   = targetNode.next;
+
+    const newNode = new _Node(newNodeValue, nextNode);
+
+    targetNode.next = newNode;
+  }
 
   insertAt(newNodeValue, targetNodeValue) {}
 

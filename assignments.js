@@ -14,9 +14,9 @@ const main = function () {
 
   // SLL.remove('squirrel');
 
-
   SLL.insertBefore('xxxxxx', 'Helo');
 
+  SLL.insertAfter('xxxxxx', 'Helo');
 
   debug(SLL);
 };
@@ -29,7 +29,8 @@ const debug = function (list) {
   } else {
 
     let node = list.head;
-    while(node.next !== null) {
+
+    while(node !== null) {
       console.log(node.value);
       node = node.next;
     }
