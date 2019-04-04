@@ -2,42 +2,58 @@ const LinkedList = require('./LinkedList');
 
 const main = function () {
 
-  const SLL = new LinkedList();
+  // const SLL = new LinkedList();
 
-  SLL.insertFirst('Apollo');
-  SLL.insertFirst('Boomer');
-  SLL.insertFirst('Helo');
-  SLL.insertFirst('Husker');
-  SLL.insertFirst('Starbuck');
+  // SLL.insertFirst('Apollo');
+  // SLL.insertFirst('Boomer');
+  // SLL.insertFirst('Helo');
+  // SLL.insertFirst('Husker');
+  // SLL.insertFirst('Starbuck');
 
-  SLL.insertFirst('Tauhida');
+  // SLL.insertFirst('Tauhida');
 
-  SLL.remove('squirrel');
+  // SLL.remove('squirrel');
 
-  SLL.insertBefore('Athena', 'Boomer');
+  // SLL.insertBefore('Athena', 'Boomer');
 
-  SLL.insertAfter('Hotdog', 'Helo');
+  // SLL.insertAfter('Hotdog', 'Helo');
 
-  SLL.insertAt('Kat', 2);
+  // SLL.insertAt('Kat', 2);
 
-  SLL.remove('Tauhida');
+  // SLL.remove('Tauhida');
 
-  console.log(size(SLL));
+  // console.log(size(SLL));
 
-  console.log(isEmpty(SLL));
+  // console.log(isEmpty(SLL));
 
-  console.log(isEmpty(new LinkedList()));
+  // console.log(isEmpty(new LinkedList()));
 
-  console.log(findLast(SLL));
+  // console.log(findLast(SLL));
 
-  console.log(findPrevious(SLL, 'Athena'));
+  // console.log(findPrevious(SLL, 'Athena'));
 
 
   // Assignment #4
   // The program removes all subsequent duplicate values
   // O(n^2) Polynomial (Quadratic)
 
-  debug(SLL);
+
+  const letterList = new LinkedList();
+  letterList.insertLast('a')
+  letterList.insertLast('b')
+  letterList.insertLast('c')
+  letterList.insertLast('d')
+  letterList.insertLast('e')
+  letterList.insertLast('f')
+  letterList.insertLast('g')
+
+  debug(letterList);
+  console.log('-------');
+  reverseList(letterList);
+  debug(letterList);
+
+
+  // debug(SLL);
 
 
 };
@@ -120,5 +136,67 @@ const findLast = function (list) {
   return currNode;
 };
 
+const reverseList = function (list) {
+
+  // If list is empty
+  if (list.head === null) {
+    return list;
+  }
+
+  let previousNode = null;
+  let currentNode  = list.head;
+
+  // from first to last node
+  while (currentNode.next !== null) {
+
+    currentNode.next = previousNode;
+    previousNode = currentNode;
+  }
+
+
+  // each node should point to the one before it
+  // the first node should point to null
+  // the head should point to last node
+
+
+
+
+
+// --------------------
+
+
+  // let currentNode = list.head;
+  // let tempNode      = null;
+  // let tempNextValue = null;
+
+  // while (currentNode !== null && currentNode.next !== null) {
+
+  //   currentNode.next = tempNextValue;
+  //   tempNextValue = currentNode;
+
+  //   currentNode = currentNode.next;
+  // }
+
+  // // handle the last node in list here
+  // currentNode.next = tempNextValue;
+  // list.head = currentNode;
+
+
+
+
+  // First item
+    // next = null
+    // loop
+
+  // second item
+    // next to the node from the previous loop
+    // loop
+
+  // for last item (where item.next === null)
+    // next to the node from the previous loop
+    // list.head this current item
+
+
+};
 
 main();
