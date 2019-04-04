@@ -14,9 +14,11 @@ const main = function () {
 
   // SLL.remove('squirrel');
 
-  SLL.insertBefore('xxxxxx', 'Helo');
+  // SLL.insertBefore('xxxxxx', 'Helo');
 
-  SLL.insertAfter('xxxxxx', 'Helo');
+  // SLL.insertAfter('xxxxxx', 'Helo');
+
+  SLL.insertAt('xxxxx', 6);
 
   debug(SLL);
 };

@@ -83,7 +83,48 @@ class LinkedList {
     targetNode.next = newNode;
   }
 
-  insertAt(newNodeValue, targetNodeValue) {}
+  insertAt(newNodeValue, targetPosition) {
+
+    // if list empty
+    if (this.head === null) {
+      return null;
+    }
+
+    // handle adding at begining
+    if (targetPosition === 0) {
+      const newNode = new _Node(newNodeValue, this.head);
+      this.head = newNode;
+      return;
+    }
+
+    let prevNode         = null;
+    let currNode         = this.head;
+    let currNodePosition = 0;
+
+    // known: list is not empty
+
+    while (currNodePosition !== targetPosition && currNode.next !== null) {
+      prevNode = currNode;
+      currNode = currNode.next;
+      currNodePosition++;
+    }
+
+    // current pos is target pos OR currNode.next === null OR both
+
+    if (currNode.next === null && currNodePosition === targetPosition) {
+      // the last item is the target
+    }
+
+    // targetPosition does not exist in list
+    if (currNode.next === null && currNodePosition !== targetPosition) {
+      return null;
+    }
+
+    // we've found
+    const newNode = new _Node(newNodeValue, currNode);
+    prevNode.next = newNode;
+
+  }
 
   remove(item) {
 
